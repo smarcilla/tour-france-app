@@ -1,6 +1,5 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# tour-france-app
+App to play tour the France
 
 ## Available Scripts
 
