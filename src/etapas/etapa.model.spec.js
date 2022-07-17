@@ -14,10 +14,10 @@ describe("Etapa", () => {
         beforeEach(() => {
             etapa = new Etapa(100, 5);
             ciclistas = [
-                { nombre: "Ciclista1", obtenerTiempoEnCarrera: () => 340 },
-                { nombre: "Ciclista2", obtenerTiempoEnCarrera: () => 500 },
-                { nombre: "Ciclista3", obtenerTiempoEnCarrera: () => 200 },
-                { nombre: "Ciclista4", obtenerTiempoEnCarrera: () => 600 }
+                { nombre: "Ciclista1", obtenerTiempoEnEtapa: () => 340 },
+                { nombre: "Ciclista2", obtenerTiempoEnEtapa: () => 500 },
+                { nombre: "Ciclista3", obtenerTiempoEnEtapa: () => 200 },
+                { nombre: "Ciclista4", obtenerTiempoEnEtapa: () => 600 }
             ]
             result = etapa.calcularClasificacion(ciclistas);
         })
