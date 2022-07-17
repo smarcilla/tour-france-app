@@ -1,30 +1,32 @@
 class Ciclista {
-    constructor(etapa, dado){
+    constructor(etapa, dado) {
         this.kilometros = 0;
         this.tiempoEtapa = 0;
         this.tiempoCarrera = 0;
         this.etapa = etapa;
         this.dado = dado;
     }
-    avanzarKilometros(avance){
+    avanzarKilometros(avance) {
         this.kilometros = this.kilometros + avance;
     }
-    sumarTiempoEnEtapa(){
+    sumarTiempoEnEtapa() {
         this.tiempoEtapa = this.etapa.calcularTiempo(this.kilometros);
     }
-    sumarTiempoEnCarrera(){
+    sumarTiempoEnCarrera() {
         this.tiempoCarrera = this.tiempoCarrera + this.tiempoEtapa;
     }
-    avanzarEnEtapa(){
+    avanzarEnEtapa() {
         const avance = this.dado.lanzar();
         this.avanzarKilometros(avance);
         this.sumarTiempoEnEtapa();
+    }
+    avanzarEnCarrera() {
         this.sumarTiempoEnCarrera();
     }
-    obtenerTiempoEnEtapa(){
+    obtenerTiempoEnEtapa() {
         return this.tiempoEtapa;
     }
-    obtenerTiempoEnCarrera(){
+    obtenerTiempoEnCarrera() {
         return this.tiempoCarrera;
     }
 }
