@@ -16,12 +16,15 @@ class Carrera {
     avanzarEnCarrera() {
         this.ciclistas.forEach(c => c.avanzarEnCarrera());
     }
-    calcularTiempoGanador(ciclista) {
+    calcularGanador(ciclista) {
         const tiempoActualCiclista = ciclista.obtenerTiempoEnCarrera();
-        if (tiempoActualCiclista > this.tiempoLimite) {
-            this.tiempoLimite = tiempoActualCiclista;
-        }
-        return this.tiempoLimite - ciclista.obtenerTiempoEnCarrera()
+        const tiempoCiclistaGanador = this.ciclistaGanador;
+        if (tiempoActualCiclista > tiempoCiclistaGanador) {
+            this.ciclistaGanador = ciclista;
+        }        
+    }
+    calcularTiempoCiclista(ciclista){
+    return this.ciclistaGanador.obtenerTiempoEnCarrera() - ciclista.obtenerTiempoEnCarrera()
     }
     calcularClasificacion() {
         const ciclistasOrdenados = this.ciclistas.sort((ciclista1, ciclista2) => {
@@ -39,7 +42,7 @@ class Carrera {
             (c, index) =>
             ({
                 nombre: c.nombre, posicion: index + 1,
-                tiempo: this.calcularTiempoGanador(c)
+                tiempo: this.calcularTiempoCiclista(c)
             }))
     }
 }

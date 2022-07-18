@@ -29,7 +29,21 @@ describe('Carrera', () => {
 
 
     })
+    describe('avanzarEnCarrera', () => {
+        let mockCorredorAvanzarEnCarrera = jest.fn();
+        beforeEach(() => {
+            ciclistas = [...Array(5)].map((_) => ({ avanzarEnCarrera: mockCorredorAvanzarEnCarrera }))
+            carrera = new Carrera(etapas, ciclistas);
+            carrera.avanzarEnCarrera();
+        });
+        test("should call ciclista avanzarEnCarrera", ()=>{
+            expect(mockCorredorAvanzarEnCarrera).toHaveBeenCalled();
+        })
+    });
 
+    describe('calcularClasificacion', () => {
+        
+    });
 
 
 })
